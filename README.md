@@ -51,16 +51,13 @@ Both of our data set was created by Apartment List and it was created in order t
 
 Data wrangling: We first started working on the Seattle city data. Originally, all of the columns except for "Bedroom_size" were month dates and there were 3 rows (the bedroom sizes). To fix this, we used the gather() function to combine all of the month columns into a single column of rows, the "months" column; also, we used "-Bedroom_size" because it's the column we wanted gather data from. This changed the data frame from 3 rows to 174 observations. The final data frame was stored under "avg_means2", in order to indicate that we have manipulated the original data set. After that, we changed the format of months to dates so that we can get rid of the "X" before every date and so the date format can be easier to read.
 
-
 ### **4.0 Information Visualization**
-The first visualization we intend to include is a US map which each marker on the map will be represent a state. When clicked on, each point will provide information of mean price for studio, 1bedroom and 2 bedroom of that state. The bigger the marker on the map means the more expensive the rent is for that state. In this way, we can indirectly answer the 1st research question. The second graph will be a bar chart that directly compare the rent for 5 major cities in the United States from 2015-2019. We will include 3 different types of housing which are studio, 1 bedroom and 2 bedroom. The last graph will only focus on the monthly rent for Seattle Area. We used a scatter plot chart to see directly which month from January, 2015 to October, 2019 has the cheapest rental price for studio, 1br and 2 br apartments.
+The first visualization we intend to include is a US map which each marker on the map will be represent a state. When clicked on, each point will provide information of mean price for studio, 1bedroom and 2 bedroom of that state. The bigger the marker on the map means the more expensive the rent is for that state. In this way, we can indirectly answer the 1st research question. The second graph will be a bar chart that directly compare the rent for 5 major cities in the United States from 2015-2019. We will include 3 different types of housing which are studio, 1 bedroom and 2 bedroom. The last graph will only focus on the monthly rent for Seattle Area. We used a line chart to see directly which month from January, 2015 to October, 2019 has the cheapest rental price for studio, 1br and 2 br apartments.
 
 
 ### **5.0 Technical description of Shiny application**
-(1) We downloaded the csv file from Apartment List and saved in the "data" folder then loaded to the Rstudio. In rstudio, we used read.csv() and stored it in an avg_means variable so that we can manipulate the data frame.
-
-(2) The major libraries that we used were shiny and shinythemes, ggplot2, tidyr, lubridate    
-
+(1) We downloaded the csv file from Apartment List and saved in the "data" folder then loaded to the Rstudio. In rstudio, we used read.csv() and stored it in an avg_means variable so that we can manipulate the data frame.    
+(2) shiny and shinythems, ggplot2, tidyr, lubridate       
 (3) We have ui.R file, server.R, average_mean_graph.R files so far. ui.R will have the UI of the ShinyApp, and will display all visualization of the shinyApp. These displays are created by the server.R file, by using functions such as renderText, and renderPlot. average_mean_graph.R file is the file that we did an analysis of rent for Seattle Area, and this file is sourced into both ui.R and server.R files. In the future, we will do more analysis in the average_mean_graph.R file, rename it to something appropriate and continue to use the file for the source file for the ShinyApp. Dataset used in the source file is kept and will be kept in data folder of our project. All the other files, such as ui.R, server.R and the source file itself will be in the project folder itself (base directory), not under sub-folders.
 
 
@@ -77,16 +74,25 @@ Benji Xie
 ### **References**
 * “U.S. Rent Data - Apartment List Rentonomics.” Rentonomics, https://www.apartmentlist.com/rentonomics/rental-price-data/.
 * Excel Easy. Line Chart. n.d. 31 OCT 2019. https://www.excel-easy.com/examples/line-chart.html
-* HojuHoju, et al. “How to Alternate a New Line for Overlapping x Axis Labels?” Stack Overflow, May 2018, stackoverflow.com/questions/50399838/how-to-alternate-a-new-line-for-overlapping-x-axis-labels#%20-for-overlapping-x-axis-labels.
+* Smoky Mountains. Fall Foliage Map. 2019. 31 OCT 2019. https://smokymountains.com/fall-foliage-map/
 
 
 ### **Appendix 1: Data Dictionary**
+The Data Dictionary for original dataset:
+
 | Variable Name | Description     | Data Type    | Measurement Type|
 | ------------- |:---------------:|--------------|-----------------|
-| Location      |The location of measured place| Character| Location|
+| Location      |The location of measured place which could be either state or city| Character| Location|
 |Location_type|The type of location can be in either state or city|Character|State or city|
 | State| The state which measured place at| Character| State|
 |Bedroom_size|The size of bedrooms which can be studio, 1br, 2br, 3br, or 4br|Character|The size of bedroom|
+|Price_20XX_XX|The rounded up mean price in certain month of certain year(2014-2019)|Integer|Dollar value|
+
+The Data Dictionary for Seattle Monthly Rent Analysis:
+
+| Variable Name | Description     | Data Type    | Measurement Type|
+| ------------- |:---------------:|--------------|-----------------|
+| Bedroom_size    |The size of bedrooms which can be studio, 1br, 2br, 3br, or 4br| Character| The size of bedroom|
 |Price_20XX_XX|The rounded up mean price in certain month of certain year(2014-2019)|Integer|Dollar value|
 
 ### **Appendix 2: Reflections**
