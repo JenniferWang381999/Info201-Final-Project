@@ -45,21 +45,23 @@ _Autumn 2019_
 ### **3.0 The data set(s)**
 Both of our data set was created by Apartment List and it was created in order to provide price transparency to America’s 110 million renters to help them make the best possible decisions in choosing a place to call home. I had access on their "data" page on Apartment List Rentonomics. Each locations represents an "observation" and the variables that each observation have are location type, state, bedroom size, and the price in each month from January, 2014 to October, 2019. The original city data sets we are using have 3376 rows and 74 columns but we created a sub-set and only focused on 5 major cities in the U.S. The data set represents mean value of rent for certain type of house.  
 
-We first started working on the Seattle city data. Originally, all of the columns except for "Bedroom_size" were month dates and there were 3 rows (the bedroom sizes). To fix this, we used the gather() function to combine all of the month columns into a single column of rows, the "months" column; also, we used "-Bedroom_size" because it's the column we wanted gather data from. This changed the data frame from 3 rows to 174 observations. The final data frame was stored under "avg_means2", in order to indicate that we have manipulated the original data set. After that, we changed the format of months to dates so that we can get rid of the "X" before every date and so the date format can be easier to read.
-
 * Strengths: Our data set is clean and organized already, all the prices are rounded up integers and it's the mean price for each month for certain place and we don't have any missing values. According to the Envisioning Cards, it is important to evaluate user experience of values and I think this data set did a great job on this.
 
 * Weaknesses: Since the data set is organized and cleaned already, we don't have access to the original data and in this case, we don't know if the data set is accurate. Another weakness for this data set is that the value they use is dollar-value and for some people who don't live in America and not used to dollar-value, they might have a hard time to analyze it and this is the same phenomenon as "Perceptions of a Value" from the one of the Envisioning Cards. Sometimes stakeholders have different perceptions of the definition of a specific value.
 
-Data wrangling: The data set we are using is already organized and cleaned and no missing values.
+Data wrangling: We first started working on the Seattle city data. Originally, all of the columns except for "Bedroom_size" were month dates and there were 3 rows (the bedroom sizes). To fix this, we used the gather() function to combine all of the month columns into a single column of rows, the "months" column; also, we used "-Bedroom_size" because it's the column we wanted gather data from. This changed the data frame from 3 rows to 174 observations. The final data frame was stored under "avg_means2", in order to indicate that we have manipulated the original data set. After that, we changed the format of months to dates so that we can get rid of the "X" before every date and so the date format can be easier to read.
+
+
 ### **4.0 Information Visualization**
 The first visualization we intend to include is a US map which each marker on the map will be represent a state. When clicked on, each point will provide information of mean price for studio, 1bedroom and 2 bedroom of that state. The bigger the marker on the map means the more expensive the rent is for that state. In this way, we can indirectly answer the 1st research question. The second graph will be a bar chart that directly compare the rent for 5 major cities in the United States from 2015-2019. We will include 3 different types of housing which are studio, 1 bedroom and 2 bedroom. The last graph will only focus on the monthly rent for Seattle Area. We used a line chart to see directly which month from January, 2015 to October, 2019 has the cheapest rental price for studio, 1br and 2 br apartments.
 
 
 ### **5.0 Technical description of Shiny application**
 (1) We downloaded the csv file from Apartment List and saved in the "data" folder then loaded to the Rstudio. In rstudio, we used read.csv() and stored it in an avg_means variable so that we can manipulate the data frame.
+
 (2) The major libraries that we used were shiny and shinythemes, ggplot2, tidyr, lubridate    
-(3) We have ui.R file, server.R, average_mean_graph.R files so far where ui.R has the user's visualization and we analyzed rent for Seattle Area in the average_mean_graph.R then combined to the ui.R
+
+(3) We have ui.R file, server.R, average_mean_graph.R files so far. ui.R will have the UI of the ShinyApp, and will display all visualization of the shinyApp. These displays are created by the server.R file, by using functions such as renderText, and renderPlot. average_mean_graph.R file is the file that we did an analysis of rent for Seattle Area, and this file is sourced into both ui.R and server.R files. In the future, we will do more analysis in the average_mean_graph.R file, rename it to something appropriate and continue to use the file for the source file for the ShinyApp. Dataset used in the source file is kept and will be kept in data folder of our project. All the other files, such as ui.R, server.R and the source file itself will be in the project folder itself (base directory), not under sub-folders. 
 
 
 ### **6.0 Conclusion**
