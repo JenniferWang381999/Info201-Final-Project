@@ -15,9 +15,15 @@ avg_means2 <- avg_means %>%
     -Bedroom_Size
   )
 
+
+
 # Removes the "X" and converts the variable column into dates
 avg_means2$months <- format(
   as.Date(avg_means2$months, format = "X%Y.%d"), "%Y-%d")
+
+#avg_means2 <- mutate(years = as.Date(avg_means2$months, format = "X%Y.%d"), "%Y")
+
+# View(avg_means2)
 
 # Return the first and last part of objects in the avg_means2 dataframe.
 head(avg_means2)

@@ -2,6 +2,7 @@
 # This is the user-interface definition of a Shiny web application. You can
 # run the application by clicking 'Run App' above.
 #
+# 
 
 
 library(shiny)
@@ -12,8 +13,21 @@ library(lubridate)
 source("average_means_graph.R")
 
 
-shiny <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
-                    "HOUSING PRICES ANALYSIS", 
+ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
+                    tags$b("HOUSING PRICES ANALYSIS"), 
+    
+   page_Overview <- tabPanel(
+        "SUMMARY",
+                        
+        #title of Summary Tab 
+        titlePanel("Overview of the Analysis"), 
+        
+        mainPanel(
+            h5("Here we will have an overview of the Analysis: 
+                1. Questions we are trying to answer, and why it is important.  
+                2. Brief explanation for navigation ")
+        )
+    ),
                     
    page_one <- tabPanel(
         #Title of the first question
@@ -24,11 +38,10 @@ shiny <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
         
         sidebarLayout
         (
-            
             sidebarPanel
             (
                 # Sidebar with a slider input for number of bins
-                sliderInput("bins",
+                sliderInput("bins1",
                             "Include Years",
                             min = 2015,
                             max = 2019,
@@ -36,7 +49,7 @@ shiny <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                 ),
                 # Dropdown List of cities 
                 selectInput(
-                    "date", "View by a Specific City :",
+                    "city", "View by a Specific City :",
                     c("Boston", "Los Angeles", "New York", "San Francisco", "Seattle")                
                 )
             ),
@@ -46,8 +59,9 @@ shiny <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                 h4("Under Construction : 
                     PLEASE go to Tab 2: 
                     RENT ANALYSIS BY MONTH to see the minimally functioning shinyApp"),
-                plotOutput("seattle_Rent_2015_2019"), 
-                textOutput("TEST")
+                h5("There will be an interactive map showing the rent prices 
+                   according to the city/year, and detailed information and analysis of the 
+                   question and on the map here."),
             )
         )
         
@@ -57,6 +71,7 @@ shiny <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
     page_two <- tabPanel(
         "RENT ANALYSIS BY MONTH",
         
+        #프롯트리로 
         #title of second Tab 
         titlePanel("Analysis of Rent Comparison from 2015-2019 by Month, in Seattle"),
         
@@ -85,22 +100,63 @@ shiny <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                 #display the graph
                 plotOutput("seattle"),
                 textOutput("TEST_Code"),
+                h5("There will be a detailed description of the graph and the analysis of the graph")
             )
         )
     ),
     
-    page_three <- tabPanel(
-        "SUMMARY",
-        
-        #title of Summary Tab 
-        titlePanel("Summary of the Analysis")
-    ),
-    
+   #tab three - conclusion 
+   page_three <- tabPanel(
+     "CONCLUSION",
+     
+     #title of Info tab 
+     titlePanel("CONCLUSION of the Analysis"),
+     
+     mainPanel(
+       #header text : maybe use verbatim box? 
+       h5("Will list the conclusion of the analysis and 
+          include the link to the technical report here.")
+       
+     )
+   ), 
+  
+   #tab four - information about us. 
     page_four <- tabPanel(
         "Info",
         
         #title of Info tab 
-        titlePanel("About Us")
+        titlePanel("About Us"),
+        
+        #main panel content 
+        mainPanel(
+          #header text : maybe use verbatim box? 
+          h5("Information about the group members will be under this tab."), 
+          h3(tags$b("GROUP MEMBERS")), 
+          h5("in alphabetical order"), 
+          tags$br(), 
+          
+          #Annie 
+          h4(tags$b("Annie")),
+          
+          tags$br(), 
+          
+          #Israel 
+          h4(tags$b("Israel")),
+          
+          tags$br(), 
+          
+          #Jennifer 
+          h4(tags$b("Jennifer")),
+          
+          tags$br(), 
+          
+          #Jin 
+          h4(tags$b("Jin")),
+          h5("Created the UI and the Server of the ShinyWebApp."), 
+          h5("I am a UW Junior, majoring in Informatics")
+          
+          
+        )
     )
     
 ))
