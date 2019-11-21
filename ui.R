@@ -23,6 +23,8 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
         titlePanel("Overview of the Analysis"), 
         
         mainPanel(
+            h4("Link to the Wiki : "), 
+            h4("https://github.com/JenniferWang381999/Info201-Final-Project/wiki/Technical-Report"),
             h5("Here we will have an overview of the Analysis: 
                 1. Questions we are trying to answer, and why it is important.  
                 2. Brief explanation for navigation ")
