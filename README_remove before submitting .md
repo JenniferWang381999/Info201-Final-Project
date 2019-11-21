@@ -1,6 +1,7 @@
 # **Housing Price Analysis**
 ## - Housing Price Report in 5 Major Cities in The United States
 
+
 #### Team Members And Contact Information:   
 Jennifer Wang, yw298@uw.edu   
 Jin Son, jinson@uw.edu   
@@ -11,6 +12,11 @@ _Info-201: Technical Foundations of Informatics_
 _The Information School_    
 _University of Washington_
 _Autumn 2019_
+
+
+### Link to the ShinyWebApp
+https://rentanalysisinfo201.shinyapps.io/info201-final-project/
+
 
 ### **1.0 Introduction**
 1.1 _Problem Situation_
@@ -69,12 +75,11 @@ The first visualization we intend to include is a US map which each marker on th
 
 ### **Acknowledgements:**
 Benji Xie
-
+David Hendry
+Jeeyoung Kim
 
 ### **References**
 * “U.S. Rent Data - Apartment List Rentonomics.” Rentonomics, https://www.apartmentlist.com/rentonomics/rental-price-data/.
-* Excel Easy. Line Chart. n.d. 31 OCT 2019. https://www.excel-easy.com/examples/line-chart.html
-* Smoky Mountains. Fall Foliage Map. 2019. 31 OCT 2019. https://smokymountains.com/fall-foliage-map/
 
 
 ### **Appendix 1: Data Dictionary**

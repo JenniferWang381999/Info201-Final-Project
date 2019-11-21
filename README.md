@@ -67,7 +67,8 @@ The first visualization we intend to include is a US map which each marker on th
 
 ### **Acknowledgements:**
 Benji Xie,    
-David Hendry
+David Hendry,
+Jeeyoung Kim
 
 
 ### **References**
