@@ -1,5 +1,15 @@
-# **Housing Price Analysis**
+# **README**
+### Link to the ShinyApp
+https://rentanalysisinfo201.shinyapps.io/info201-final-project/
+
+### Link to the GitHub Wiki
+https://github.com/JenniferWang381999/Info201-Final-Project/wiki
+
+
+## **Technical Report**
+## **Housing Price Analysis**
 ## - Housing Price Report in 5 Major Cities in The United States
+
 
 #### Team Members And Contact Information:   
 Jennifer Wang, yw298@uw.edu   
@@ -7,8 +17,15 @@ Jin Son, jinson@uw.edu
 Jisu Kim, anie0521@uw.edu    
 Israel Martinez, israelma@uw.edu   
 
-* **Relevant Links**
- * The shiny app link: [Link](https://rentanalysisinfo201.shinyapps.io/info201-final-project/)
+_Info-201: Technical Foundations of Informatics_    
+_The Information School_    
+_University of Washington_
+_Autumn 2019_
+
+
+### Link to the ShinyWebApp
+https://rentanalysisinfo201.shinyapps.io/info201-final-project/
+
 
 ### **1.0 Introduction**
 1.1 _Problem Situation_
@@ -66,13 +83,13 @@ The first visualization we intend to include is a US map which each marker on th
 (3) In the future, Jin will still work on the shiny app, Israel will do the data wrangling for visualization for 5 major cities in the US and Jisu will use data visualization to present the graph. Jennifer will do the US map data visualization.      
 
 ### **Acknowledgements:**
-Benji Xie,    
-David Hendry,
+Benji Xie
+David Hendry
 Jeeyoung Kim
-
 
 ### **References**
 * “U.S. Rent Data - Apartment List Rentonomics.” Rentonomics, https://www.apartmentlist.com/rentonomics/rental-price-data/.
+
 
 ### **Appendix 1: Data Dictionary**
 The Data Dictionary for original dataset:
