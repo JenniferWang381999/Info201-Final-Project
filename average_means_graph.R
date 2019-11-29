@@ -2,8 +2,6 @@ library(ggplot2)
 library(tidyr)
 library(lubridate)
 library(dplyr)
-library(toOrdinal)
-
 
 # Read the csv and store it under the name "avg_means"
 avg_means <- read.csv("data/seattle_apt_2015_2019.csv",
