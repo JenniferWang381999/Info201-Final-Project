@@ -27,28 +27,28 @@ server <- function(input, output) {
     as.Date(avg_means2$variable, format = "X%Y.%d"), "%Y-%d")
   
   
-    output$seattle <- renderPlot({
-
-      # How to filter by two standards? one by year, and one by months only? IF year then show t
-      # the years only and the months then filter the months only? 
-      # Creates a data plot.
-        ggplot(data = avg_means2,
-               aes(x = variable, y = price, color = Bedroom_Size), group = 3) +
-        # Points are placed the prices of housing for each month, separated by the
-        # Bedroom Size.
-        geom_point() +
-        ggtitle("Rental Listing Trend") +
-        xlab("Year-Month") +
-        ylab("Price ($)") +
-        # Turns the x-axis labels to 45 degrees so that it is readable
-        # This solution was taken from the second answer in this post:
-        # https://stackoverflow.com/questions/50399838/how-to-alternate-a-new-line
-        # -for-overlapping-x-axis-labels
-        theme(axis.text.x  = element_text(angle=45, hjust = 1))
-    })
+  output$seattle <- renderPlot({
     
-    output$TEST_Code <- renderText({
-      paste("This page has the minimally functioning ShinyApp")
-    })
-    
+    # How to filter by two standards? one by year, and one by months only? IF year then show t
+    # the years only and the months then filter the months only? 
+    # Creates a data plot.
+    ggplot(data = avg_means2,
+           aes(x = variable, y = price, color = Bedroom_Size), group = 3) +
+      # Points are placed the prices of housing for each month, separated by the
+      # Bedroom Size.
+      geom_point() +
+      ggtitle("Rental Listing Trend") +
+      xlab("Year-Month") +
+      ylab("Price ($)") +
+      # Turns the x-axis labels to 45 degrees so that it is readable
+      # This solution was taken from the second answer in this post:
+      # https://stackoverflow.com/questions/50399838/how-to-alternate-a-new-line
+      # -for-overlapping-x-axis-labels
+      theme(axis.text.x  = element_text(angle=45, hjust = 1))
+  })
+  
+  output$TEST_Code <- renderText({
+    paste("This page has the minimally functioning ShinyApp")
+  })
+  
 }
