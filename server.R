@@ -49,20 +49,17 @@ server <- function(input, output) {
   # How to make months show when zoomed in? 
     output$seattle <- renderPlotly({
        viz2_df <- avg_means2 %>% 
-                  filter(year > 2014)
-        # ggplot(data = viz2_df,
-        #        aes(x = months, y = price, color = Bedroom_Size), group = 3) +
-        # # Points are placed the prices of housing for each month, separated by the
-        # # Bedroom Size.
-        # geom_point() +
-        # ggtitle("Rental Listing Trend") +
-        # xlab("Year-Month") +
-        # ylab("Price ($)") +
-        # # Turns the x-axis labels to 45 degrees so that it is readable
-        # theme(axis.text.x  = element_text(angle=45, hjust = 1))
-        plot_ly(data = viz2_df, x = ~months, y = ~price, type = 'scatter',
+                  filter((input$slider_range2[2]) >= year &
+                           year >= (input$slider_range2[1]))
+       print(input$slider_range2)
+       plot_ly(data = viz2_df, x = ~months, y = ~price, type = 'scatter',
                 mode = 'markers',
                 color = ~Bedroom_Size, marker = list(size = 10))
+    })
+    
+    #Reactive slider range. 
+    viz2_range <- reactive({
+      cbind(input$range[1],input$range[2])
     })
     
     #For text output 
