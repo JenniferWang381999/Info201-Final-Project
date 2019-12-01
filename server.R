@@ -13,11 +13,12 @@ library(shiny)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(plotly)
 source("average_means_graph.R")
 
 server <- function(input, output) {
   
-  output$seattle <- renderPlot({
+  output$seattle1 <- renderPlot({
     
     # How to filter by two standards? one by year, and one by months only? IF year then show t
     # the years only and the months then filter the months only? 
@@ -41,31 +42,37 @@ server <- function(input, output) {
     paste("This page has the minimally functioning ShinyApp")
   })
   
-}
+
 
   # for visualization on tab 3 - 
   # Research Question 2 (ggplot map of housing prices in Seattle)
-    output$seattle <- renderPlot({
-      
-        ggplot(data = avg_means2,
-               aes(x = months, y = price, color = Bedroom_Size), group = 3) +
-        # Points are placed the prices of housing for each month, separated by the
-        # Bedroom Size.
-        geom_point() +
-        ggtitle("Rental Listing Trend") +
-        xlab("Year-Month") +
-        ylab("Price ($)") +
-        # Turns the x-axis labels to 45 degrees so that it is readable
-        # This solution was taken from the second answer in this post:
-        # https://stackoverflow.com/questions/50399838/how-to-alternate-a-new-line
-        # -for-overlapping-x-axis-labels
-        theme(axis.text.x  = element_text(angle=45, hjust = 1))
+  # How to make months show when zoomed in? 
+    output$seattle <- renderPlotly({
+       viz2_df <- avg_means2 %>% 
+                  filter(year > 2014)
+        # ggplot(data = viz2_df,
+        #        aes(x = months, y = price, color = Bedroom_Size), group = 3) +
+        # # Points are placed the prices of housing for each month, separated by the
+        # # Bedroom Size.
+        # geom_point() +
+        # ggtitle("Rental Listing Trend") +
+        # xlab("Year-Month") +
+        # ylab("Price ($)") +
+        # # Turns the x-axis labels to 45 degrees so that it is readable
+        # theme(axis.text.x  = element_text(angle=45, hjust = 1))
+        plot_ly(data = viz2_df, x = ~months, y = ~price, type = 'scatter',
+                mode = 'markers',
+                color = ~Bedroom_Size, marker = list(size = 10))
     })
     
     #For text output 
     output$TEST_Code <- renderText({
       paste("This page has the minimally functioning ShinyApp")
     })
+    
+    #For Viz2 Slider range
+    output$range <- renderPrint({ input$slider2 })
+
   
    # for debugging:  print("bottom")
 }

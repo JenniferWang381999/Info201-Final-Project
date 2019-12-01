@@ -10,6 +10,7 @@ library(shinythemes)
 library(ggplot2)
 library(reshape2)
 library(lubridate)
+library(plotly)
 source("average_means_graph.R")
 
 
@@ -79,11 +80,12 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
         sidebarLayout(
             sidebarPanel(
                 # Sidebar with a slider input for number of bins
-                sliderInput("bins",
+                sliderInput("slider_range2",
                             "Include Years",
                             min = 2015,
                             max = 2019,
-                            value = 5
+                            value = c(2015,2016),
+                            sep = ""
                 ),
                 # Dropdown List of Months  
                 selectInput(
@@ -99,7 +101,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                    January 2015 to October 2019 in Seattle.",
                    "The chart includes prices for studios, one-bedrooms, two-bedrooms"),
                 #display the graph
-                plotOutput("seattle"),
+                plotlyOutput("seattle"),
                 textOutput("TEST_Code"),
                 h5("There will be a detailed description of the graph and the analysis of the graph")
             )
