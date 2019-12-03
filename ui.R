@@ -65,14 +65,6 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
         (
             sidebarPanel
             (
-                # Sidebar with a slider input for number of bins
-                sliderInput("bins1",
-                            "Include Years",
-                            min = 2015,
-                            max = 2019,
-                            value = c(2015,2016),
-                            sep = ""
-                ),
                 # Dropdown List of cities 
                 selectInput(
                     "BedroomType", "View by a Specific Type of Bedroom :",
