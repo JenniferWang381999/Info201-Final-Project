@@ -12,6 +12,7 @@ library(reshape2)
 library(lubridate)
 library(plotly)
 source("average_means_graph.R")
+source("avg_rental_5_cities.R")
 
 
 ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
@@ -48,12 +49,13 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                             "Include Years",
                             min = 2015,
                             max = 2019,
-                            value = 5
+                            value = c(2015,2016),
+                            sep = ""
                 ),
                 # Dropdown List of cities 
                 selectInput(
-                    "city", "View by a Specific City :",
-                    c("Boston", "Los Angeles", "New York", "San Francisco", "Seattle")                
+                    "BedroomType", "View by a Specific Type of Bedroom :",
+                    c("Studio", "One bedroom", "Two Bedrooms")                
                 )
             ),
             
@@ -62,9 +64,12 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                 h4("Under Construction : 
                     PLEASE go to Tab 2: 
                     RENT ANALYSIS BY MONTH to see the minimally functioning shinyApp"),
+                plotOutput("city_comparison"),
                 h5("There will be an interactive map showing the rent prices 
                    according to the city/year, and detailed information and analysis of the 
-                   question and on the map here.")
+                   question and on the map here."),
+                textOutput("Test_code1")
+                
             )
         )
         
