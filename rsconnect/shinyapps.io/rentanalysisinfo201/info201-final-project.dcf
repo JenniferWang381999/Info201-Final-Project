@@ -5,6 +5,6 @@ account: rentanalysisinfo201
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1502757
-bundleId: 2606009
+bundleId: 2629789
 url: https://rentanalysisinfo201.shinyapps.io/info201-final-project/
-when: 1574308860.40591
+when: 1575190535.73489

@@ -64,7 +64,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                     RENT ANALYSIS BY MONTH to see the minimally functioning shinyApp"),
                 h5("There will be an interactive map showing the rent prices 
                    according to the city/year, and detailed information and analysis of the 
-                   question and on the map here."),
+                   question and on the map here.")
             )
         )
         
