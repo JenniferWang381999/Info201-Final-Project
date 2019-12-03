@@ -19,41 +19,51 @@ source("avg_rental_5_cities.R")
 
 server <- function(input, output) {
   
-  output$city_comparison <- renderPlot({
+  output$city_comparison <- renderPlotly({
     
-    if(input$BedroomType == 'Studio') {
-      #start with a dataframe from avg_rental_5_cities, 
-      #create a new df
-      #use the newly created df to plot 
-      #Once that works, you can use the filtering part. (refer to output$seattle for code) - year 
-      print("studio") #for debuggging purpose 
-      stu_avg <- melt(
-        studio_df, id = "Location", na.rm = TRUE, value.name = "price"
-      )
-      
-      stu_avg$variable <- format(
-        as.Date(stu_avg$variable, format = "%Y"), "%Y"
-      )
-      
-      head(stu_avg)
-      
-      ggplot(stu_avg, aes(variable, price, group = Location, color = Location)) +
-        geom_point() +
-        geom_line() +
-        labs(x = "Year", Y = "Price", title = "Studio Price by year and cities")
-      
+  #   if(input$BedroomType == 'Studio') {
+  #     #start with a dataframe from avg_rental_5_cities, 
+  #     #create a new df
+  #     #use the newly created df to plot 
+  #     #Once that works, you can use the filtering part. (refer to output$seattle for code) - year 
+  #     print("studio") #for debuggging purpose 
+  #     stu_avg <- melt(
+  #       studio_df, id = "Location", na.rm = TRUE, value.name = "price"
+  #     )
+  #     
+  #     stu_avg$variable <- format(
+  #       as.Date(stu_avg$variable, format = "%Y"), "%Y"
+  #     )
+  #     
+  #     head(stu_avg)
+  #     
+  #     ggplot(stu_avg, aes(variable, price, group = Location, color = Location)) +
+  #       geom_point() +
+  #       geom_line() +
+  #       labs(x = "Year", Y = "Price", title = "Studio Price by year and cities")
+  #     
+  #   }
+  #   
+  #   #This is for the dropdown menu == 'one bedroom' 
+  #   if(input$BedroomType == 'One bedroom') {
+  #     print("one bed") # for debugging 
+  #   }
+  #   if(input$BedroomType == 'Two bedrooms') {
+  #     
+  #   }
+  #   
+
+    if(input$BedroomType == "Studio") {
+      return(stu_graph)
     }
-    
-    #This is for the dropdown menu == 'one bedroom' 
-    if(input$BedroomType == 'One bedroom') {
-      print("one bed") # for debugging 
+    if(input$BedroomType == "One bedroom") {
+      return(onebr_graph)
     }
-    if(input$BedroomType == 'Two bedrooms') {
-      
+    if(input$BedroomType == "Two bedrooms") {
+      return(twobr_graph)
     }
-      
-  })
-  
+})
+
   
   
   output$TEST_Code <- renderText({
