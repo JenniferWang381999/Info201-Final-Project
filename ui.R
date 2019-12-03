@@ -88,8 +88,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                 plotlyOutput("city_comparison"),
                 h5("There will be an interactive map showing the rent prices 
                    according to the city/year, and detailed information and analysis of the 
-                   question and on the map here."),
-                textOutput("Test_code1")
+                   question and on the map here.")
                 
             )
         )
