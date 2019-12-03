@@ -66,7 +66,7 @@ stu_avg$variable <- format(
 
 head(stu_avg)
 
-ggplot(stu_avg, aes(variable, price, group = Location, color = Location)) +
+stu_graph <- ggplot(stu_avg, aes(variable, price, group = Location, color = Location)) +
   geom_point() +
   geom_line() +
   labs(x = "Year", Y = "Price", title = "Studio Price by year and cities")
@@ -83,10 +83,12 @@ onebr_avg$variable <- format(
 
 head(onebr_avg)
 
-ggplot(onebr_avg, aes(variable, price, group = Location, color = Location)) +
+onebr_graph <- ggplot(onebr_avg, aes(variable, price, group = Location, color = Location)) +
   geom_point() +
   geom_line() +
   labs(x = "Year", Y = "Price", title = "One Bedroom Price by year and cities")
+
+
 
 # two bed graph
 
@@ -100,7 +102,7 @@ onebr_avg$variable <- format(
 
 head(twobr_avg)
 
-ggplot(twobr_avg, aes(variable, price, group = Location, color = Location)) +
+twobr_graph <- ggplot(twobr_avg, aes(variable, price, group = Location, color = Location)) +
   geom_point() +
   geom_line() +
   labs(x = "Year", Y = "Price", title = "Two Bedrooms Price by year and cities")

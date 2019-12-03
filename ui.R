@@ -76,7 +76,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                 # Dropdown List of cities 
                 selectInput(
                     "BedroomType", "View by a Specific Type of Bedroom :",
-                    c("Studio", "One bedroom", "Two Bedrooms")                
+                    c("Studio", "One bedroom", "Two bedrooms")                
                 )
             ),
             
@@ -85,7 +85,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                 h4("Under Construction : 
                     PLEASE go to Tab 2: 
                     RENT ANALYSIS BY MONTH to see the minimally functioning shinyApp"),
-                plotOutput("city_comparison"),
+                plotlyOutput("city_comparison"),
                 h5("There will be an interactive map showing the rent prices 
                    according to the city/year, and detailed information and analysis of the 
                    question and on the map here."),
