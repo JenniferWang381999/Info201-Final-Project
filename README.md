@@ -1,6 +1,6 @@
 # **README**
 ### Link to the ShinyWebApp
-https://rentanalysisinfo201.shinyapps.io/info201-final-project/
+https://info201analysis.shinyapps.io/info201-final-project/
 
 ### Link to the GitHub Wiki
 https://github.com/JenniferWang381999/Info201-Final-Project/wiki
