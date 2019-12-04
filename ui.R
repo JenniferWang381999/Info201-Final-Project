@@ -104,13 +104,8 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                             max = 2019,
                             value = c(2015,2016),
                             sep = ""
-                ),
-                # Dropdown List of Months  
-                selectInput(
-                    "date", "View by a Specific Month :",
-                    c("JAN", "FEB", "MAR", "APR", "MAY", "JUN",
-                      "JULY", "AUG", "SEPT", "OCT", "NOV", "DEC")                
                 )
+
             ),
             
             mainPanel(
@@ -129,7 +124,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
      "REPORT",
      
      #title of Info tab 
-     titlePanel("CONCLUSION ANALYSIS"),
+     titlePanel("CONCLUSION OF ANALYSIS"),
      
      mainPanel(
        #header text : maybe use verbatim box? 
