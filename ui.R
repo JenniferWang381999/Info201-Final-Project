@@ -37,7 +37,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                to only focus on the year 2015-2019."),
        br(),
        h3("Link to the Original Data"),
-       h4("https://www.apartmentlist.com/rentonomics/rental-price-data/"),
+       tags$a(href ="https://www.apartmentlist.com/rentonomics/rental-price-data/", "apartmentlist"),
        br(),
        h3("Research Questions:"),
        h4("Q1: What is the average housing price in each city (Los Angeles, San Francisco, 
@@ -49,7 +49,9 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
        h3("Audience:"),
        h4("Our project can be beneficial basically for everyone who wants to move to Boston,
                Los Angeles, New York, San Francisco, and Seattle. Indeed, we focused on the Greater
-               Seattle Area to help people estimate the best month to move in."),
+               Seattle Area to help people estimate the best month to move in. Our stakeholder is mainly 
+               immigrants and want to give them a brief picture of housing prices in 5 major cities 
+              in the United States."),
        br(),
        h3("Authors and Contact Information"),
        h4("Jennifer Wang, yw298@uw.edu; 
@@ -150,7 +152,8 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
        h4("The second graph shows a general trend of increasing rent as time passed from January 
           2015 to 2019. Within this trend, there is also a less significant, in terms of magnitude, trend 
           in each year. The rent generally goes up in the first half of the year then decrease a bit after 
-          mid year."),
+          mid year.The best month to rent is at the beginning of the year and end of the year. We also found that
+          the price reaches to the peak mostly in mid-year which is July."),
        br(),
        
        h3("Conclusion:"),

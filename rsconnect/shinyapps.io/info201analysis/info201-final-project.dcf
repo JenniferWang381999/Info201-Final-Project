@@ -5,8 +5,8 @@ account: info201analysis
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1502757
-bundleId: 2639362
+bundleId: 2641456
 url: https://info201analysis.shinyapps.io/info201-final-project/
-when: 1575445793.18775
+when: 1575489876.4087
 asMultiple: FALSE
 asStatic: FALSE
