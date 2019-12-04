@@ -25,28 +25,33 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
      titlePanel("Students Performance Dataset"), 
      
      mainPanel(
-       h2("Our Goal:"),
+       h3("Our Goal:"),
        h4("Every year, a large number of people are moving to new locations for school and work.
   The very first problem they are facing is to find a suitable and affordable apartment or house 
   to live in. Our goal for this project is to use open-source data to find out the best option of renting."),
-       h2("Where the dataset is from: "), 
+       br(),
+       h3("Where the dataset is from: "), 
        h4("The dataset is collected from the Apartment List which is the platfrom that connects
                renters and enters with apartment listings through an online marketplace. We downloaded 
                the csv file from the Apartment List Rentonomics and we used data wrangling
                to only focus on the year 2015-2019."),
-       h2("Link to the Original Data"),
+       br(),
+       h3("Link to the Original Data"),
        h4("https://www.apartmentlist.com/rentonomics/rental-price-data/"),
-       h2("Research Questions:"),
-       h4("<Q1: What is the average housing price in each city (Los Angeles, San Francisco, 
+       br(),
+       h3("Research Questions:"),
+       h4("Q1: What is the average housing price in each city (Los Angeles, San Francisco, 
             Seattle, NYC and Boston) from 2015- 2019, and the trend of the price over the 
             term and predictions of the housing prices in the future?"),
-       h4("<Q2: What is the best month to rent an apartment (1bedroom, 2bedroom, studio) in Seattle 
+       h4("Q2: What is the best month to rent an apartment (1bedroom, 2bedroom, studio) in Seattle 
                based on the data collected between 2015-2019?"),
-       h2("Audience:"),
+       br(),
+       h3("Audience:"),
        h4("Our project can be beneficial basically for everyone who wants to move to Boston,
                Los Angeles, New York, San Francisco, and Seattle. Indeed, we focused on the Greater
                Seattle Area to help people estimate the best month to move in."),
-       h2("Authors and Contact Information"),
+       br(),
+       h3("Authors and Contact Information"),
        h4("Jennifer Wang, yw298@uw.edu; 
                 Jin Son, jinson@uw.edu; 
                 Jisu Kim, anie0521@uw.edu; 
@@ -74,13 +79,9 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
             
             # Plot of the Q1. 
             mainPanel(
-                h4("Under Construction : 
-                    PLEASE go to Tab 2: 
-                    RENT ANALYSIS BY MONTH to see the minimally functioning shinyApp"),
-                plotlyOutput("city_comparison"),
-                h5("There will be an interactive map showing the rent prices 
-                   according to the city/year, and detailed information and analysis of the 
-                   question and on the map here.")
+                h5("This linechart shows the rental price for three different bedroom types which include 
+                   studio, 1bedroom and 2 bedroom in 5 major cities in the U.S. from 2015 to 2019."),
+                plotlyOutput("city_comparison")
                 
             )
         )
@@ -118,9 +119,7 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
                    January 2015 to October 2019 in Seattle.",
                    "The chart includes prices for studios, one-bedrooms, two-bedrooms"),
                 #display the graph
-                plotlyOutput("seattle"),
-                textOutput("TEST_Code"),
-                h5("There will be a detailed description of the graph and the analysis of the graph")
+                plotlyOutput("seattle")
             )
         )
     ),
@@ -134,9 +133,10 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
      
      mainPanel(
        #header text : maybe use verbatim box? 
-       h2("What is the average housing price in each city (Los Angeles, San Francisco, 
+       h3("What is the average housing price in each city (Los Angeles, San Francisco, 
             Seattle, NYC and Boston) from 2015- 2019, and the trend of the price over the 
             term and predictions of the housing prices in the future?"),
+       br(),
        h4("The first graph shows the average housing price for 5 major cities in the U.S. from 2015 to 2019.
             From the frist graph, we can conclude that San Francisco has the highest average housing
            price for all three apartment types which includes studio, 1 bedroom and 2 bedroom 
@@ -147,16 +147,18 @@ ui <- shinyUI(navbarPage(theme = shinytheme("cerulean"),
           the years that we studied. San Franscico, haviing the highest rent of all cities, does not experience
            that much of a dramatic change. Whereas cities like Seattle and Los Angeles, had experience a more 
            significant change as they started off with lower pricing, hence creating more room of growth."),
+       br(),
        
-       h2("What is the best month to rent an apartment (1bedroom, 2bedroom, studio) in Seattle 
+       h3("What is the best month to rent an apartment (1bedroom, 2bedroom, studio) in Seattle 
                based on the data collected between 2015-2019?"),
        
        h4("The second graph shows a general trend of increasing rent as time passed from January 
           2015 to 2019. Within this trend, there is also a less significant, in terms of magnitude, trend 
           in each year. The rent generally goes up in the first half of the year then decrease a bit after 
           mid year."),
+       br(),
        
-       h2("Conclusion:"),
+       h3("Conclusion:"),
        
        h4("By analyzing the graphs we generated, we came to the conclusion that there is indeed an increase 
           in rent in cities that are growing. As cities grow toward its own capacity, the trend of increasing 

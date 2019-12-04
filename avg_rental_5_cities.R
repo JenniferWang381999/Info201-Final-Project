@@ -60,15 +60,15 @@ stu_avg <- melt(
    studio_df, id = "Location", na.rm = TRUE, value.name = "price"
  )
 
-stu_avg$variable <- format(
+stu_avg$year <- format(
    as.Date(stu_avg$variable, format = "%Y"), "%Y"
 )
 
 head(stu_avg)
 
-stu_graph <- ggplot(stu_avg, aes(variable, price, group = Location, color = Location)) +
+stu_graph <- ggplot(stu_avg, aes(year, price, color = Location)) +
   geom_point() +
-  geom_line() +
+  geom_line(aes(group = Location)) +
   labs(x = "Year", Y = "Price", title = "Studio Price by year and cities")
 
 # one bed graph
@@ -77,15 +77,15 @@ onebr_avg <- melt(
   one_br_df, id = "Location", na.rm = TRUE, value.name = "price"
 )
 
-onebr_avg$variable <- format(
+onebr_avg$year <- format(
   as.Date(onebr_avg$variable, format = "%Y"), "%Y"
 )
 
 head(onebr_avg)
 
-onebr_graph <- ggplot(onebr_avg, aes(variable, price, group = Location, color = Location)) +
+onebr_graph <- ggplot(onebr_avg, aes(year, price, color = Location)) +
   geom_point() +
-  geom_line() +
+  geom_line(aes(group = Location)) +
   labs(x = "Year", Y = "Price", title = "One Bedroom Price by year and cities")
 
 
@@ -96,14 +96,14 @@ twobr_avg <- melt(
   two_br_df, id = "Location", na.rm = TRUE, value.name = "price"
 )
 
-onebr_avg$variable <- format(
+twobr_avg$year <- format(
   as.Date(twobr_avg$variable, format = "%Y"), "%Y"
 )
 
 head(twobr_avg)
 
-twobr_graph <- ggplot(twobr_avg, aes(variable, price, group = Location, color = Location)) +
+twobr_graph <- ggplot(twobr_avg, aes(year, price, color = Location)) +
   geom_point() +
-  geom_line() +
+  geom_line(aes(group = Location)) +
   labs(x = "Year", Y = "Price", title = "Two Bedrooms Price by year and cities")
 
